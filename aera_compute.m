@@ -1,0 +1,62 @@
+%% u = 6V mini
+u = 6;
+k1 = 4.32;
+k2 = 3.74;
+gamma = 0.625;
+g=981;
+h1=25*0.4384;
+h2=25*0.4382;
+h3=25*0.2880;
+h4=25*0.4129;
+a3 = (1-gamma) * k2 * u / sqrt(2*g*h3) % 0.0708 cm^2
+a4 = (1-gamma) * k1 * u / sqrt(2*g*h4) % 0.0683 cm^2
+a2 = a4 * sqrt(h4/h2) + gamma * k2 * u / sqrt(2*g*h2) % 0.1620 cm^2
+a1 = a3 * sqrt(h3/h1) + gamma * k1 * u / sqrt(2*g*h1) % 0.1679 cm^2
+
+%% u = 7.5V mini
+u = 7.5;
+k1 = 4.32;
+k2 = 3.74;
+gamma = 0.625;
+g=981;
+h1=25*0.6847;
+h2=25*0.6838;
+h3=25*0.4493;
+h4=25*0.6426;
+a3 = (1-gamma) * k2 * u / sqrt(2*g*h3) % 0.0709 cm^2
+a4 = (1-gamma) * k1 * u / sqrt(2*g*h4) % 0.0684 cm^2
+a2 = a4 * sqrt(h4/h2) + gamma * k2 * u / sqrt(2*g*h2) % 0.1621 cm^2
+a1 = a3 * sqrt(h3/h1) + gamma * k1 * u / sqrt(2*g*h1) % 0.1679 cm^2
+
+%% u=6V non-mini
+u = 6;
+k1 = 4.32;
+k2 = 3.74;
+gamma = 1 - 0.625;
+g=981;
+h1=25*0.4082;
+h2=25*0.4712;
+h3=25*0.1437;
+h4=25*0.1709;
+a3 = (1-gamma) * k2 * u / sqrt(2*g*h3) % 0.1671 cm^2
+a4 = (1-gamma) * k1 * u / sqrt(2*g*h4) % 0.1769 cm^2
+a2 = a4 * sqrt(h4/h2) + gamma * k2 * u / sqrt(2*g*h2) % 0.1619 cm^2
+a1 = a3 * sqrt(h3/h1) + gamma * k1 * u / sqrt(2*g*h1) % 0.1678 cm^2
+
+%% u = 7.5V non-mini
+u = 7.5;
+k1 = 4.32;
+k2 = 3.74;
+gamma = 1 - 0.625;
+g=981;
+h1=25*0.6379;
+h2=25*0.7363;
+h3=25*0.2245;
+h4=25*0.2671;
+a3 = (1-gamma) * k2 * u / sqrt(2*g*h3) % 0.1671 cm^2
+a4 = (1-gamma) * k1 * u / sqrt(2*g*h4) % 0.1769 cm^2
+a2 = a4 * sqrt(h4/h2) + gamma * k2 * u / sqrt(2*g*h2) % 0.1619 cm^2
+a1 = a3 * sqrt(h3/h1) + gamma * k1 * u / sqrt(2*g*h1) % 0.1678 cm^2
+
+%%% Conlusion: a1 and a2 no much change; a3 and a4 change between mini and
+%%% non-mini; On the same setting (mini or non-mini), U = 6V or 7.5V results similar.
